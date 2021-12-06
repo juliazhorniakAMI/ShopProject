@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZProject", "PZProject\PZProject.csproj", "{7BCC817A-7E91-4E26-B8BC-5AB084DE2C11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZProject.BLL", "PZProject.BLL\PZProject.BLL.csproj", "{D84BE1D7-A10B-4AB2-A970-0EEC39FD9541}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZProject.DAL", "PZProject.DAL\PZProject.DAL.csproj", "{2F9205E9-8687-4F12-9F1F-63B1B2ABF18E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZProjectsTests", "PZProjectsTests\PZProjectsTests.csproj", "{85386A33-4BE3-4112-A258-B224D423EF8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZProject.DTO", "PZProject.DTO\PZProject.DTO.csproj", "{7724F2D8-7ED9-4930-8A35-9A1C7F8E7F40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp", "WinFormsApp\WinFormsApp.csproj", "{BC53B1C2-CF03-4DCE-B48C-EF832867FE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{F5451A9A-A9D8-492C-BD50-9164D2DD0CC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BCC817A-7E91-4E26-B8BC-5AB084DE2C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCC817A-7E91-4E26-B8BC-5AB084DE2C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCC817A-7E91-4E26-B8BC-5AB084DE2C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCC817A-7E91-4E26-B8BC-5AB084DE2C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D84BE1D7-A10B-4AB2-A970-0EEC39FD9541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84BE1D7-A10B-4AB2-A970-0EEC39FD9541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84BE1D7-A10B-4AB2-A970-0EEC39FD9541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84BE1D7-A10B-4AB2-A970-0EEC39FD9541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9205E9-8687-4F12-9F1F-63B1B2ABF18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9205E9-8687-4F12-9F1F-63B1B2ABF18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9205E9-8687-4F12-9F1F-63B1B2ABF18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9205E9-8687-4F12-9F1F-63B1B2ABF18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85386A33-4BE3-4112-A258-B224D423EF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85386A33-4BE3-4112-A258-B224D423EF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85386A33-4BE3-4112-A258-B224D423EF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85386A33-4BE3-4112-A258-B224D423EF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7724F2D8-7ED9-4930-8A35-9A1C7F8E7F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7724F2D8-7ED9-4930-8A35-9A1C7F8E7F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7724F2D8-7ED9-4930-8A35-9A1C7F8E7F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7724F2D8-7ED9-4930-8A35-9A1C7F8E7F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC53B1C2-CF03-4DCE-B48C-EF832867FE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC53B1C2-CF03-4DCE-B48C-EF832867FE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC53B1C2-CF03-4DCE-B48C-EF832867FE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC53B1C2-CF03-4DCE-B48C-EF832867FE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5451A9A-A9D8-492C-BD50-9164D2DD0CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5451A9A-A9D8-492C-BD50-9164D2DD0CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5451A9A-A9D8-492C-BD50-9164D2DD0CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5451A9A-A9D8-492C-BD50-9164D2DD0CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7C029BC-EB50-41F7-A7AC-67C6CE7B5167}
+	EndGlobalSection
+EndGlobal
