@@ -1,0 +1,33 @@
+﻿<Application x:Class="WpfApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp"
+              xmlns:views="clr-namespace:WpfApp.Views"
+             xmlns:viewmodels="clr-namespace:WpfApp.ViewModels"
+             xmlns:windows="clr-namespace:WpfApp.Windows"
+             StartupUri="Windows/Login.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
+            <windows:MainWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:OrderViewModel}">
+            <views:OrderView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <windows:Login/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:DailyProductsViewModel}">
+                <views:DailyProductsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:FruitsViewModel}">
+                <views:FruitsView/>
+            </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:VegetablesViewModel}">
+            <views:VegetablesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:CartViewModel}">
+            <views:CartView/>
+        </DataTemplate>
+     
+    </Application.Resources>
+</Application>
