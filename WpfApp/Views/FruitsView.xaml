@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="WpfApp.Views.FruitsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Views"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+          d:DesignHeight="362" Width="600">
+    <Grid Margin="5,7,-6,12">
+        <TextBox materialDesign:HintAssist.Hint="Write a nickname" FontFamily="Champagne &amp; Limousines" FontSize="22"  Margin="34,106,393,201" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Background="White"></TextBox>
+        <Button  Background="#FF848496" Command="{Binding FilteredList}"
+                    CommandParameter="FruitsFilter"  BorderBrush="#FF836C6C" RenderTransformOrigin="0.5,0.5" Margin="209,98,336,201">
+           
+
+            <materialDesign:PackIcon Kind="Search" Width="20" Height="30" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+
+            </materialDesign:PackIcon>
+        </Button>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="-4,122,6,-7"/>
+        <StackPanel Margin="-1,129,6,2">
+            <Button Background="DarkGreen" Content="SORT" Command="{Binding SortedList}"
+                    CommandParameter="FruitsSorted"
+                   Margin="400 10 0 10" Height="24" Width="142"/>
+            <DataGrid x:Name="DataGridStudents" AutoGenerateColumns="False"
+                      ItemsSource="{Binding Product.ProductsDTO}" CanUserAddRows="False"  Height="165" Width="596" RenderTransformOrigin="0.5,0.5">
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.636"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.938"/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="220" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=FullName}" Width="220"  IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" Width="100"  IsReadOnly="True"/>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+
+    </Grid>
+
+</UserControl>

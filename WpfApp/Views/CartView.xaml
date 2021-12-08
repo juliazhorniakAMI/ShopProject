@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="WpfApp.Views.CartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp"
+              xmlns:viewmodels="clr-namespace:WpfApp.ViewModels"       
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:wn1="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="362" Width="600">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="validationFailed">
+            <DockPanel LastChildFill="true">
+                <Border Background="Red" DockPanel.Dock="right" Margin="5,0,0,0" Width="20" Height="20" CornerRadius="10"
+                                    ToolTip="{Binding ElementName=customAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}">
+                    <TextBlock Text="!" VerticalAlignment="center" HorizontalAlignment="center" FontWeight="Bold" Foreground="white">
+                    </TextBlock>
+                </Border>
+                <AdornedElementPlaceholder Name="customAdorner" VerticalAlignment="Center" >
+                    <Border BorderBrush="red" BorderThickness="1" />
+                </AdornedElementPlaceholder>
+            </DockPanel>
+        </ControlTemplate>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"
+                Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,-12,1,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox ItemsSource="{Binding prodList}"  SelectedItem="{Binding order.Product}" Margin="68,53,87,278"/>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="88,176,2,-2" Grid.ColumnSpan="2">
+
+        </materialDesign:TransitioningContent>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,-58,0,0" Width="257" RenderTransformOrigin="0.433,0.419">
+            <Button x:Name="ButtonSave" Content="Save" Height="25" Width="84"
+              
+                    Command="{Binding SaveCommand}" IsEnabled="{Binding order.IsEnabled}" Background="#FF2D7EAC"/>
+            <Button x:Name="ButtonCancel" Content="Cancel" Height="25" Width="84" 
+                    Command="{Binding ResetCommand}"  Background="#FFA3B2BB"/>
+        </StackPanel>
+        <StackPanel Margin="79,176,6,-6" Grid.ColumnSpan="2">
+            <DataGrid x:Name="DataGridStudents" AutoGenerateColumns="False"
+                      ItemsSource="{Binding order.OrderDetailsList}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CanUserAddRows="False"  Height="208" Width="503">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product" Width="190" Binding="{Binding Product}"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="190"  IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="200"  IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Button Content="Delete" Command="{Binding DeleteCommand}" Margin="8,202,209,124" Foreground="#FF081015" Background="#FF1A7D9B" Height="25"/>
+        <Label Content="Product" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top" Height="30" Width="49"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Margin="4,101,0,0" VerticalAlignment="Top" Height="29" Width="57"/>
+        <TextBox Height="25"  Margin="69,90,58,235" Validation.ErrorTemplate="{StaticResource validationFailed}"
+          ToolTip="{Binding ErrorCollection[order.Quantity]}" RenderTransformOrigin="0.509,0.333" >
+            <TextBox.Text  >
+                <Binding Path="order.Quantity" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" UpdateSourceTrigger="PropertyChanged" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="Total sum" HorizontalAlignment="Left" Margin="19,38,0,0" VerticalAlignment="Top" Height="30" Width="58" Grid.Column="1"/>
+        <TextBox  FontFamily="Champagne &amp; Limousines" FontSize="22"  Margin="108,37,53,277" Text="{Binding order.Total,Mode=TwoWay}" IsReadOnly="True"  Background="White" Grid.Column="1"></TextBox>
+        <Button Content="CONFIRM ORDER"   Command="{Binding ConfirmCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="71,109,0,0" VerticalAlignment="Top" Height="40" Width="150" Background="#FFE5514A" Foreground="#FF3EBB7D" FontSize="14" FontWeight="Bold"/>
+    </Grid>
+
+</UserControl>
